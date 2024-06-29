@@ -1,0 +1,18 @@
+from PIL import Image, ImageDraw, ImageFont
+
+# Membuat canvas untuk logo
+logo1 = Image.new("RGB", (500, 300), (255, 255, 255))
+draw1 = ImageDraw.Draw(logo1)
+
+# Menambahkan teks
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 50)
+draw1.text((100, 100), "AMANDA SERVIS", fill="blue", font=font)
+
+# Menambahkan simbol AC
+draw1.rectangle([200, 150, 300, 250], outline="gray", width=5)
+draw1.line([220, 180, 280, 220], fill="blue", width=3)
+draw1.line([220, 220, 280, 180], fill="blue", width=3)
+
+# Menyimpan logo
+logo1.save("/mnt/data/amanda_servis_logo_1.png")
+logo1.show()
